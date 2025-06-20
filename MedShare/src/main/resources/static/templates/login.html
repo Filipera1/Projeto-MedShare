@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">Login - MedShare</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+<div class="page-header">
+    <div class="logo-container">
+        <img th:src="@{/images/logo.png}" alt="MedShare Logo" class="logo">
+        <h1 class="app-title">MedShare</h1>
+    </div>
+    <p class="app-subtitle">Conectando quem precisa com quem pode ajudar</p>
+</div>
+
+<div class="login-container">
+    <h1 class="welcome-title">Bem-vindo ao MedShare</h1>
+    <p class="welcome-subtitle">Entre com sua conta Google para continuar</p>
+
+    <div class="google-signin-section">
+        <div class="security-info">
+            <div class="security-icon">🔒</div>
+            <p>Por questões de segurança e praticidade, utilizamos apenas autenticação Google</p>
+        </div>
+
+        <div class="google-signin">
+            <div id="g_id_onload"
+                 data-client_id="SEU_GOOGLE_CLIENT_ID_AQUI"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left"
+                 data-width="100%">
+            </div>
+        </div>
+
+        <div class="benefits-list">
+            <h3>Benefícios da autenticação Google:</h3>
+            <ul>
+                <li>✅ Login rápido e seguro</li>
+                <li>✅ Não precisa criar nova senha</li>
+                <li>✅ Seus dados protegidos pelo Google</li>
+                <li>✅ Acesso em qualquer dispositivo</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="signup-link">
+        Primeira vez aqui? <a th:href="@{/signup}">Cadastre-se com Google</a>
+    </p>
+</div>
+
+<script th:src="@{/js/login.js}"></script>
+</body>
+</html>

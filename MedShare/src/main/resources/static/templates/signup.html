@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle}">Cadastro - MedShare</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+<div class="page-header">
+    <div class="logo-container">
+        <img th:src="@{/images/logo.png}" alt="MedShare Logo" class="logo">
+        <h1 class="app-title">MedShare</h1>
+    </div>
+    <p class="app-subtitle">Conectando quem precisa com quem pode ajudar</p>
+</div>
+
+<div class="login-container">
+    <h1 class="welcome-title">Junte-se ao MedShare</h1>
+    <p class="welcome-subtitle">Crie sua conta com Google e comece a ajudar</p>
+
+    <div class="google-signin-section">
+        <div class="terms-section">
+            <label class="terms-checkbox">
+                <input type="checkbox" id="terms" name="terms" required>
+                <span>Aceito os <a href="#" class="terms-link">Termos de Uso</a> e <a href="#" class="terms-link">Política de Privacidade</a></span>
+            </label>
+
+            <label class="terms-checkbox">
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <span>Quero receber notificações sobre doações próximas</span>
+            </label>
+        </div>
+
+        <div class="google-signin">
+            <div id="g_id_onload"
+                 data-client_id="SEU_GOOGLE_CLIENT_ID_AQUI"
+                 data-context="signup"
+                 data-ux_mode="popup"
+                 data-callback="handleGoogleSignup"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signup_with"
+                 data-size="large"
+                 data-logo_alignment="left"
+                 data-width="100%">
+            </div>
+        </div>
+    </div>
+
+    <p class="signup-link">
+        Já tem uma conta? <a th:href="@{/login}">Faça login aqui</a>
+    </p>
+</div>
+
+<script th:src="@{/js/login.js}"></script>
+</body>
+</html>
